@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAMEPH | Game Download Hub</title>
+  <meta name="description" content="GAMEPH game download hub" />
+  <style>
+    :root {
+      --bg: #070b12;
+      --panel: #101821;
+      --panel-2: #171f2c;
+      --line: #263042;
+      --text: #edf3ff;
+      --muted: #9ca8ba;
+      --accent: #7c5cff;
+      --accent-2: #19d3ae;
+      --danger: #ff6b6b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, rgba(3, 7, 12, 0.68), rgba(3, 7, 12, 0.91) 38%, rgba(3, 7, 12, 0.96));
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(6, 8, 13, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      margin-right: auto;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo b { color: var(--accent); }
+
+    nav a {
+      padding: 9px 11px;
+      border-radius: 8px;
+      color: #cbd3df;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    nav a:hover {
+      background: #171e2b;
+      color: white;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 90px 20px 65px;
+      background: radial-gradient(circle at 80% 20%, #4721a844, transparent 35%);
+    }
+
+    .hero small {
+      color: var(--accent-2);
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 8vw, 82px);
+      line-height: 0.95;
+      margin: 15px 0;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 13px 18px;
+      border-radius: 10px;
+      font-weight: 900;
+      margin-top: 15px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 70px;
+    }
+
+    .tools {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .search {
+      flex: 1;
+      min-width: 240px;
+      padding: 13px 15px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(16, 24, 33, 0.9);
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 13px;
+      border-radius: 9px;
+      border: 1px solid #293244;
+      background: #101621;
+      color: #cbd3df;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button.active, button:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-top: 45px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #111824;
+      border: 1px solid #263043;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 265px;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #3a2e6f, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: 900;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .content {
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .content h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .badge {
+      display: inline-block;
+      width: fit-content;
+      background: rgba(25, 211, 174, 0.15);
+      color: var(--accent-2);
+      border: 1px solid rgba(25, 211, 174, 0.35);
+      border-radius: 999px;
+      padding: 5px 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+
+    .card a {
+      margin-top: auto;
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 10px 12px;
+      border-radius: 9px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .notice {
+      margin-top: 40px;
+      padding: 18px;
+      background: #101621;
+      border: 1px solid #263043;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #252d3d;
+      color: #8f9ab2;
+      padding: 22px 10px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 60px; }
+      nav { justify-content: center; }
+      .logo { margin-right: 0; width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="#home"><b>GAMEPH</b></a>
+      <a href="#home">HOME</a>
+      <a href="#windows">WINDOWS GAMES</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <small>GAME DOWNLOAD HUB</small>
+    <h1>PLAY MORE.<br><span>DOWNLOAD MORE.</span></h1>
+    <p>Welcome to GAMEPH. Browse game listings, discover low-spec titles, and access Windows game downloads in one clean hub.</p>
+    <a class="btn" href="#windows">Browse Games</a>
+  </section>
+
+  <main>
+    <div class="tools">
+      <input class="search" id="q" placeholder="Search games..." aria-label="Search games" />
+      <button class="active" data-cat="all">ALL GAMES</button>
+      <button data-cat="windows">WINDOWS</button>
+    </div>
+
+    <section id="windows">
+      <h2>Featured Windows Games</h2>
+      <div class="grid">
+        <article class="card" data-cat="windows" data-text="counter strike global offensive csgo fps shooter action">
+          <div class="thumb">CS</div>
+          <div class="content">
+            <span class="badge">WINDOWS</span>
+            <h3>Counter-Strike</h3>
+            <div class="meta">Classic tactical shooter with competitive rounds and team-based strategy.</div>
+            <a href="#">Download</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="windows" data-text="minecraft sandbox survival building">
+          <div class="thumb">MC</div>
+          <div class="content">
+            <span class="badge">WINDOWS</span>
+            <h3>Minecraft</h3>
+            <div class="meta">Build, explore, survive, and create in a huge block-based world.</div>
+            <a href="#">Download</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="windows" data-text="fortnite battle royale shooter multiplayer action">
+          <div class="thumb">FN</div>
+          <div class="content">
+            <span class="badge">WINDOWS</span>
+            <h3>Fortnite</h3>
+            <div class="meta">Battle royale action with building, survival, and constant updates.</div>
+            <a href="#">Download</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="windows" data-text="valorant tactical fps shooter competitive">
+          <div class="thumb">VR</div>
+          <div class="content">
+            <span class="badge">WINDOWS</span>
+            <h3>Valorant</h3>
+            <div class="meta">Tactical shooter combining precise aim with character-based abilities.</div>
+            <a href="#">Download</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="notice">
+      <strong>Note:</strong> Replace placeholder download links with legal game download URLs or your own approved distribution links before publishing.
+    </div>
+  </main>
+
+  <footer>
+    © 2026 GAMEPH — Game Download Hub
+  </footer>
+
+  <script>
+    const q = document.querySelector('#q');
+    const cards = [...document.querySelectorAll('.card')];
+    const buttons = [...document.querySelectorAll('button')];
+
+    let cat = 'all';
+
+    function run() {
+      const s = q.value.toLowerCase();
+
+      cards.forEach((card) => {
+        const match = (cat === 'all' || card.dataset.cat === cat) && (
+          (card.dataset.text || '') + ' ' + card.innerText
+        ).toLowerCase().includes(s);
+
+        card.style.display = match ? 'flex' : 'none';
+      });
+    }
+
+    q.addEventListener('input', run);
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        buttons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+        cat = button.dataset.cat;
+        run();
+      });
+    });
+
+    run();
+  </script>
+</body>
+</html>
