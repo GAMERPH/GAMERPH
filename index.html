@@ -2,326 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=GAMEPH_WINDOWS_ONLY.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GAMEPH — Game Download Hub</title>
-  <meta name="description" content="GAMEPH game download hub" />
+  <title>GAMEPH — Redirecting</title>
+  <meta name="description" content="Redirecting to GAMEPH_WINDOWS_ONLY.html" />
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, rgba(3,7,12,.68), rgba(3,7,12,.91) 38%, rgba(3,7,12,.96)),
-                  url('https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw4/home/modes/MW4_CAM_06.webp') center top/cover fixed no-repeat;
-      background-color: #080b12;
+      background: #070b12;
       color: #f5f7fb;
     }
-    a { text-decoration: none; color: inherit; }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(6,8,13,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #252d3d;
-    }
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: 900;
-      margin-right: auto;
-    }
-    .logo b { color: #7c5cff; }
-    nav a {
-      padding: 9px 11px;
-      border-radius: 8px;
-      color: #cbd3df;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    nav a:hover { background: #171e2b; color: white; }
-    .hero {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 90px 20px 65px;
-      background: radial-gradient(circle at 80% 20%, rgba(71, 33, 168, 0.27), transparent 35%);
-    }
-    .hero small {
-      color: #19d3ae;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-    .hero h1 {
-      font-size: clamp(44px, 8vw, 82px);
-      line-height: .95;
-      margin: 15px 0;
-    }
-    .hero h1 span { color: #7c5cff; }
-    .hero p {
-      max-width: 650px;
-      color: #9ca8ba;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-    .btn {
-      display: inline-block;
-      background: #7c5cff;
-      color: white;
-      padding: 13px 18px;
-      border-radius: 10px;
-      font-weight: 900;
-      margin-top: 15px;
-    }
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px 70px;
-    }
-    .tools {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-    .search {
-      flex: 1;
-      min-width: 240px;
-      padding: 13px 15px;
-      border-radius: 10px;
-      border: 1px solid #293244;
-      background: #101621;
-      color: #fff;
-    }
-    button {
-      padding: 10px 13px;
-      border-radius: 9px;
-      border: 1px solid #293244;
-      background: #101621;
-      color: #cbd3df;
-      font-weight: 800;
-      cursor: pointer;
-    }
-    button.active, button:hover {
-      background: #7c5cff;
-      color: white;
-    }
-    h2 {
-      font-size: 30px;
-      margin-top: 45px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: rgba(17, 24, 36, 0.95);
-      border: 1px solid #263043;
-      border-radius: 15px;
-      padding: 18px;
-    }
-    .cover {
-      height: 150px;
-      border-radius: 11px;
-      overflow: hidden;
-      background: #0b111a;
+    .box {
+      text-align: center;
+      padding: 24px 32px;
       border: 1px solid #2a3445;
-    }
-    .cover img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .25s;
-    }
-    .card:hover .cover img { transform: scale(1.04); }
-    .tag {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 5px 8px;
-      border-radius: 20px;
-      background: #211a40;
-      color: #bcaeff;
-      font-size: 10px;
-      font-weight: 900;
-    }
-    .card h3 { margin: 10px 0 6px; }
-    .card p {
-      color: #9ca8ba;
-      font-size: 13px;
-      min-height: 40px;
-      line-height: 1.5;
-    }
-    .download {
-      display: inline-block;
-      text-align: center;
-      background: #19d3ae;
-      color: #06120f;
-      padding: 11px 14px;
-      border-radius: 9px;
-      font-weight: 900;
-      margin-top: 14px;
-    }
-    .notice {
-      margin-top: 40px;
-      padding: 18px;
-      background: #101621;
-      border: 1px solid #263043;
       border-radius: 12px;
-      color: #9ca8ba;
-      font-size: 13px;
-      line-height: 1.6;
+      background: #111824;
     }
-    footer {
-      text-align: center;
-      border-top: 1px solid #252d3d;
-      padding: 25px;
-      color: #687487;
-      font-size: 12px;
+    a {
+      color: #7c5cff;
+      font-weight: 700;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a class="logo" href="#home"><b>GAMEPH</b></a>
-      <a href="#home">HOME</a>
-      <a href="#windows">WINDOWS GAMES</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <small>GAME DOWNLOAD HUB</small>
-    <h1>PLAY MORE.<br><span>DOWNLOAD MORE.</span></h1>
-    <p>Welcome to GAMEPH. Browse game listings with cover art, low-spec titles, new releases, and emulation resources.</p>
-    <a class="btn" href="#windows">Browse Games</a>
-  </section>
-
-  <main>
-    <div class="tools">
-      <input class="search" id="q" placeholder="Search games..." />
-      <button class="active" data-cat="all">ALL GAMES</button>
-      <button data-cat="windows">WINDOWS</button>
-    </div>
-
-    <section id="windows">
-      <h2>Windows Games</h2>
-      <div class="grid">
-        <article class="card" data-cat="windows" data-text="awoved dark fantasy action game">
-          <div class="cover"><img alt="Awoved cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>Awoved</h3>
-          <p>Dark fantasy action title</p>
-          <a class="download" href="https://datanodes.to/vgaf9v38h6ea/Awoved.rar" target="_blank">DOWNLOAD</a>
-        </article>
-
-        <article class="card" data-cat="windows" data-text="a plague tale requiem horror adventure">
-          <div class="cover"><img alt="A Plague Tale: Requiem cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1182900/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>A Plague Tale: Requiem</h3>
-          <p>Horror survival adventure</p>
-          <a class="download" href="https://datanodes.to/bpigc2fwsm6v/A-Plague-Tale-Requiem.rar" target="_blank">DOWNLOAD</a>
-        </article>
-
-        <article class="card" data-cat="windows" data-text="a way out co-op adventure game">
-          <div class="cover"><img alt="A Way Out cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222700/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>A Way Out</h3>
-          <p>Co-op narrative adventure</p>
-          <a class="download" href="https://datanodes.to/ubf36ntfpvxv/A-Way-Out.rar" target="_blank">DOWNLOAD</a>
-        </article>
-
-        <article class="card" data-cat="windows" data-text="alone in the dark">
-          <div class="cover"><img alt="Alone in the Dark cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1310410/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>Alone in the Dark</h3>
-          <p>View official-store listings and availability.</p>
-          <a class="download" href="https://datanodes.to/wnhb9rds7hdb/Alone-In-the-Dark.rar" rel="noopener noreferrer" target="_blank">VIEW LINK</a>
-        </article>
-
-        <article class="card" data-cat="windows" data-text="assassin's creed rogue">
-          <div class="cover"><img alt="Assassin's Creed Rogue cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/311560/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>Assassin's Creed Rogue</h3>
-          <p>View official-store listings and availability.</p>
-          <a class="download" href="https://datanodes.to/xqbxncr4d4d/Assassins-Creed-Rogue.rar" rel="noopener noreferrer" target="_blank">VIEW LINK</a>
-        </article>
-
-        <article class="card" data-cat="windows" data-text="assassin's creed unity">
-          <div class="cover"><img alt="Assassin's Creed Unity cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289650/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>Assassin's Creed Unity</h3>
-          <p>View official-store listings and availability.</p>
-          <a class="download" href="https://datanodes.to/86jrhudbfkp6/Assassins-Creed-Unity.rar" rel="noopener noreferrer" target="_blank">VIEW LINK</a>
-        </article>
-
-        <article class="card" data-cat="windows" data-text="assassin's creed odyssey">
-          <div class="cover"><img alt="Assassin's Creed Odyssey cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/812140/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>Assassin's Creed Odyssey</h3>
-          <p>View official-store listings and availability.</p>
-          <a class="download" href="https://datanodes.to/4ovy1or5faxq/Assassin-Creed-Odyssey.rar" rel="noopener noreferrer" target="_blank">VIEW LINK</a>
-        </article>
-
-        <article class="card" data-cat="windows" data-text="assassin's creed iv: black flag">
-          <div class="cover"><img alt="Assassin's Creed IV: Black Flag cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242050/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>Assassin's Creed IV: Black Flag</h3>
-          <p>View official-store listings and availability.</p>
-          <a class="download" href="https://datanodes.to/gwdv9vfov0hy/Assassins-Creed-IV-Black-Flag.rar" rel="noopener noreferrer" target="_blank">VIEW LINK</a>
-        </article>
-
-        <article class="card" data-cat="windows" data-text="age of empires iv">
-          <div class="cover"><img alt="Age of Empires IV cover art" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1466850/header.jpg" /></div>
-          <span class="tag">WINDOWS GAME</span>
-          <h3>Age of Empires IV</h3>
-          <p>View official-store listings and availability.</p>
-          <a class="download" href="https://datanodes.to/rresnotljthn/Age-of-Empires-IV.rar" rel="noopener noreferrer" target="_blank">VIEW LINK</a>
-        </article>
-      </div>
-    </section>
-
-    <div class="notice">
-      <b>Download policy:</b> Check that you have the right to download or distribute any linked files. For commercial games, consider authorized publisher or store options.
-    </div>
-  </main>
-
-  <footer>© 2026 GAMEPH</footer>
-
-  <script>
-    const q = document.querySelector('#q');
-    const cards = [...document.querySelectorAll('.card')];
-    const buttons = [...document.querySelectorAll('button')];
-    let cat = 'all';
-
-    function run() {
-      const s = q.value.trim().toLowerCase();
-      cards.forEach(c => {
-        const text = (c.dataset.text || '') + ' ' + (c.textContent || '');
-        const matches = !s || text.toLowerCase().includes(s);
-        const inCategory = (cat === 'all' || c.dataset.cat === cat);
-        c.style.display = (inCategory && matches) ? 'block' : 'none';
-      });
-    }
-
-    q.addEventListener('input', run);
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        button.classList.add('active');
-        cat = button.dataset.cat;
-        run();
-      });
-    });
-
-    run();
-  </script>
+  <div class="box">
+    <p>Redirecting to <a href="GAMEPH_WINDOWS_ONLY.html">GAMEPH_WINDOWS_ONLY.html</a>...</p>
+  </div>
 </body>
 </html>
